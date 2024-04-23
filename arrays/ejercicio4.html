@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números pares</title>
+</head>
+<body>
+    <label for="numbers">Introduce una lista de números separados por coma:</label>
+    <input type="text" id="numbers">
+    <button onclick="mostrarPares()">Mostrar Pares</button>
+    <table id="pares"></table>
+
+    <script>
+        function mostrarPares() {
+            const numbersInput = document.getElementById('numbers').value;
+            const numbersArray = numbersInput.split(',').map(Number);
+
+            const paresArray = numbersArray.filter(num => num % 2 === 0);
+
+            const table = document.getElementById('pares');
+            table.innerHTML = '<tr><th>Números Pares</th></tr>';
+            paresArray.forEach(num => {
+                const row = table.insertRow();
+                const cell = row.insertCell();
+                cell.textContent = num;
+            });
+        }
+    </script>
+</body>
+</html>
