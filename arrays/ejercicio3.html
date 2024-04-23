@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducir y eliminar elementos de un array</title>
+</head>
+<body>
+    <label for="element">Introduce un elemento:</label>
+    <input type="text" id="element">
+    <button onclick="agregarElemento()">Agregar</button>
+    <button onclick="eliminarElemento()">Eliminar Último</button>
+    <div id="array"></div>
+
+    <script>
+        let miArray = [];
+
+        function actualizarArray() {
+            document.getElementById('array').innerText = JSON.stringify(miArray);
+        }
+
+        function agregarElemento() {
+            const element = document.getElementById('element').value;
+            miArray.push(element);
+            actualizarArray();
+        }
+
+        function eliminarElemento() {
+            miArray.pop();
+            actualizarArray();
+        }
+    </script>
+</body>
+</html>
