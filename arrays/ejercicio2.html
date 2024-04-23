@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar cadenas</title>
+</head>
+<body>
+    <label for="string1">Cadena 1:</label>
+    <input type="text" id="string1">
+    <label for="string2">Cadena 2:</label>
+    <input type="text" id="string2">
+    <button onclick="concatenar()">Concatenar</button>
+    <div id="result"></div>
+
+    <script>
+        function concatenar() {
+            const string1 = document.getElementById('string1').value;
+            const string2 = document.getElementById('string2').value;
+
+            const concatenatedString = `${string1}, ${string2}`;
+
+            document.getElementById('result').innerText = concatenatedString;
+        }
+    </script>
+</body>
+</html>
